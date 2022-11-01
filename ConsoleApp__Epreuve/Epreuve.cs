@@ -23,6 +23,10 @@ namespace ConsoleApp__Epreuve
         {
             questions = new List<Question>();
         }
+        public List<Question> Comptes
+        {
+            get { return questions; }
+        }
 
 
 
