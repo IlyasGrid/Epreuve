@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp__Epreuve
 {
-    internal class Question
+    public class Question
     {
         string ennonce;
         int noteQuestion;
+        Reponse[] correctRps;
 
         public void setEnonce()
         {
@@ -28,6 +29,11 @@ namespace ConsoleApp__Epreuve
         public int getNoteQuestion()
         {
             return this.noteQuestion;
+        }
+
+        public Reponse[] setCorrectRps(Reponse[] rps)
+        {
+            return correctRps = rps;
         }
     }
 

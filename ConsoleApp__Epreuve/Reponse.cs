@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp__Epreuve
 {
-    internal class Reponse
+    public class Reponse
     {
-        public double lacertitude()
-        {
-            double cert = 0;
+        bool verificationReponse;
 
+        public bool VerificationReponse(bool VoF)
+        {
+            return verificationReponse = VoF;
+        }
+        
+        public double lacertitude(double cert =0 )
+        {
             return cert; 
         }
     }

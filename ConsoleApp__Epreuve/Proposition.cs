@@ -8,7 +8,8 @@ namespace ConsoleApp__Epreuve
 {
     internal class Proposition
     {
-        Reponse[] reponses;
+        Epreuve epreuve;
+
 
         public bool estVrai (Reponse reponse)
         {
