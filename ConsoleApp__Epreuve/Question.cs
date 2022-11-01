@@ -10,7 +10,6 @@ namespace ConsoleApp__Epreuve
     {
         string ennonce;
         int noteQuestion;
-        Reponse[] correctRps;
 
         public void setEnonce()
         {
@@ -31,10 +30,7 @@ namespace ConsoleApp__Epreuve
             return this.noteQuestion;
         }
 
-        public Reponse[] setCorrectRps(Reponse[] rps)
-        {
-            return correctRps = rps;
-        }
+       
     }
 
 
