@@ -10,11 +10,5 @@ namespace ConsoleApp__Epreuve
         }
 
     }
-    public class Epreuve
-    {
-        string duree;
-        string matiere;
-        
-        
-    }
+    
 }
