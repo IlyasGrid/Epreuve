@@ -9,21 +9,64 @@ namespace ConsoleApp__Epreuve
     public class Epreuve
     {
   
-            string dateEpreuve;
+            DateTime dateEpreuve;
             string duree;
             string matiere;
             int noteTotal;
             string idExaminateur;
-            string dateDebut;
-            string dateFin;
+            DateTime dateDebut;
+            DateTime dateFin;
+            Question[] questions;
 
-            public void ouvrirEpreuve()
+
+
+            public void setDateEpreuve()
         {
+            this.dateEpreuve = DateTime.Today;
+        }
+
+            public void setDuree(int hour , int minute)
+        {
+            this.duree = hour + "h" + minute + "min";
+        }
+
+        public DateTime setDateDebut()
+        {
+            ;
+
+            return this.dateDebut = DateTime.Now;
+        }
+        
+        public DateTime GetDatedebut()
+        {
+            return this.dateDebut;
+        }
+        public DateTime setDatefin()
+        {
+            dateFin = DateTime.Now;
+            if ( dateFin > dateDebut.AddHours(2) )
+            {
+                dateFin = dateDebut.AddHours(2);
+            }
+
+
+            return this.dateFin;
+
+        }
+         
+        public DateTime GetDatefin()
+        {
+            return this.dateFin;
+        }
+
+        public void ouvrirEpreuve()
+        {
+            setDateDebut();
 
         }
             public void fermerEpreuve()
         {
-
+            setDatefin();
         }
         
     }
