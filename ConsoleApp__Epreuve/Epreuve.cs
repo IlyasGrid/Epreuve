@@ -4,81 +4,72 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace ConsoleApp__Epreuve
 {
     public class Epreuve
     {
-  
-            DateTime dateEpreuve;
-            string duree;
-            string matiere;
-            int noteTotal;
-            string idExaminateur;
-            DateTime dateDebut;
-            DateTime dateFin;
+        string duree;
+        string matiere;
+        int noteTotal;
+        int idExaminateur;
+        DateTime start;
+        DateTime end;
+        DateTime dateEpreuve = new();
+        public List<Question> questions = new List<Question>();
 
-        public List<Question> questions;
-        public Epreuve(int noteTotal, DateTime dateEpreuve, string duree, string matiere, string idExaminateur, DateTime dateDebut,    DateTime dateFin)
+
+        public Epreuve(string matiere, string duree, int idExaminateur, int noteTotal, DateTime dateEpreuve)
         {
-            questions = new List<Question>();
+            this.noteTotal = noteTotal;
+            this.dateEpreuve = dateEpreuve;
+            this.duree = duree;
+            this.matiere = matiere;
+            this.idExaminateur = idExaminateur;
+
         }
-        public List<Question> Comptes
+
+        /*       setters et getters    */
+
+        public List<Question> Questions
         {
             get { return questions; }
         }
 
-
-
-        public void setDateEpreuve()
+        public int NbrQuestion
         {
-            this.dateEpreuve = DateTime.Today;
+            get { return questions.Count; }
+        }
+        public int NoteTotal { get { return noteTotal; } set { noteTotal = value; } }
+
+        public string Matiere { get { return matiere; } set { matiere = value; } }
+
+        public int IdExaminateur { get { return idExaminateur; } set { idExaminateur = value; } }
+
+        public DateTime DateEpreuve { get { return dateEpreuve; } set { dateEpreuve = value; } }
+
+        public string Duree { get { return duree; } set { duree = value; } }
+
+        public DateTime Start { get { return start; } }
+
+        public DateTime End { get { return end; } }
+
+
+        /*   methode   */
+        public void OuvrirEpreuve()
+        {
+            start = DateTime.Now;
+        }
+        public void FermerEpreuve()
+        {
+            end = DateTime.Now;
         }
 
-           
-        public void setDuree(int hour , int minute)
+        public void AddQuestion(Question question)
         {
-            this.duree = hour + "h" + minute + "min";
+            questions.Add(question);
         }
 
-        public DateTime setDateDebut()
-        {
-            ;
-
-            return this.dateDebut = DateTime.Now;
-        }
-        
-        public DateTime GetDatedebut()
-        {
-            return this.dateDebut;
-        }
-        public DateTime setDatefin()
-        {
-            dateFin = DateTime.Now;
-            if ( dateFin > dateDebut.AddHours(2) )
-            {
-                dateFin = dateDebut.AddHours(2);
-            }
-
-
-            return this.dateFin;
-
-        }
-         
-        public DateTime GetDatefin()
-        {
-            return this.dateFin;
-        }
-
-        public void ouvrirEpreuve()
-        {
-            setDateDebut();
-
-        }
-            public void fermerEpreuve()
-        {
-            setDatefin();
-        }
-        
     }
 }

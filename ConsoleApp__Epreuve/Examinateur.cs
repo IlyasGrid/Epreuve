@@ -10,38 +10,18 @@ namespace ConsoleApp__Epreuve
     {
         string nom;
         string prenom;
-        string id;
-         
-        Examinateur(string nom, string prenom, string id)
+        int id;
+
+
+        public Examinateur(string nom, string prenom, int id)
         {
             this.nom = nom;
             this.prenom = prenom;
             this.id = id;
         }
-        public void setName(string prenom)
-        {
-            this.prenom = prenom;
-        }
-        public void setLastName(string nom)
-        {
-            this.nom = nom;
-        }
-        public void setId(string id)
-        {
-            this.id = id;
-        }
-        public string getName()
-        {
-            return this.prenom; 
-        }
-        public string getLastName()
-        {
-            return this.nom;    
-        }
-        public string getId()
-        {
-            return id;
-        }
+        public string lastName { get { return nom; } set { nom = value; } }
+        public string firstName { get { return prenom; } set { prenom = value; } }
+        public int Id { get { return id; } set { id = value; } }
     }
 
 }

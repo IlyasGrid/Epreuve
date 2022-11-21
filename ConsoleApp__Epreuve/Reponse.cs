@@ -8,16 +8,33 @@ namespace ConsoleApp__Epreuve
 {
     public class Reponse
     {
-        bool verificationReponse;
+        bool verite;
+        string rps;
+        double certitude;
+        public Reponse() { }
+        public Reponse(bool verite, string rps)
+        {
+            this.verite = verite;
+            this.rps = rps;
+        }
 
-        public bool VerificationReponse(bool VoF)
+        public bool Verite { get { return verite; } set { verite = value; } }
+        public string StrRepons { get { return rps; } set { rps = value; } }
+        public double Certitude
         {
-            return verificationReponse = VoF;
+            get { return certitude; }
         }
-        
-        public double lacertitude(double cert =0 )
+
+
+        public void enterCertitude(bool sur)
         {
-            return cert; 
+            if (sur == true)
+                certitude = 100;
+            else
+            {
+                certitude = 50;
+            }
         }
+
     }
 }

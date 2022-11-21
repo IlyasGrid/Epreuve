@@ -9,52 +9,84 @@ namespace ConsoleApp__Epreuve
     public class Question
     {
         string ennonce;
-
         int noteQuestion;
 
-        public void setEnonce()
+        public Question() { }
+        public Question(string enonce, int note)
         {
-            this.ennonce = Console.ReadLine();
-        }
-
-        public string showEnonce()
-        {
-            return this.ennonce;
-        }
-
-        public void donnerNote(int note)
-        {
+            this.ennonce = enonce;
             this.noteQuestion = note;
         }
-        public int getNoteQuestion()
+        public int NoteQuestion
         {
-            return this.noteQuestion;
+            get { return noteQuestion; }
+            set
+            {
+                noteQuestion = value;
+            }
+        }
+        public string Ennonce
+        {
+            get { return ennonce; }
+            set
+            {
+                ennonce = value;
+            }
         }
 
-       
     }
-
 
 
 
     class Qcm : Question
     {
-        int nombreChoix;
+        List<Reponse> choix = new();
+        List<Proposition> prop = new();
 
-        public void setNbrChoix(int nbrchoix)
+        public Qcm(string enonce, int note) : base(enonce, note)
         {
-            this.nombreChoix = nbrchoix;
         }
 
-        public int getNbrChoix()
+        public int NombreChoix
         {
-            return this.nombreChoix;
+            get { return choix.Count; }
+        }
+        public List<Reponse> Choix
+        {
+            get { return choix; }
+        }
+        public List<Proposition> Prop
+        {
+            get { return prop; }
+        }
+
+        public void AddReponses(Reponse reponse)
+        {
+            choix.Add(reponse);
+        }
+        public void AddProposition(Proposition proposition)
+        {
+            prop.Add(proposition);
         }
 
     }
-    class QusetionOuverte : Question
-    {
 
+
+    class QuestionOuverte : Question
+    {
+        Proposition proposition;
+
+        public QuestionOuverte(string enonce, int note) : base(enonce, note)
+        {
+        }
+        public Proposition Proposition
+        {
+            get { return proposition; }
+        }
+        public void AddProposition(Proposition proposition)
+        {
+            this.proposition = Proposition;
+        }
     }
 
 }

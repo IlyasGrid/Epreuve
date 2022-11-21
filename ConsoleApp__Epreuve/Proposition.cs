@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp__Epreuve
 {
-    internal class Proposition
+    public class Proposition
     {
-        Epreuve epreuve;
-
-        epreuve.
-
-        public bool estVrai (Reponse reponse)
+        string strPropo;
+        public Proposition() { }
+        public Proposition(string proposition)
         {
-            return false;
+            strPropo = proposition;
         }
+        public string proposition { get { return strPropo; } set { strPropo = value; } }
+
     }
 }
