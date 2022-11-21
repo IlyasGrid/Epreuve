@@ -10,6 +10,7 @@ namespace ConsoleApp__Epreuve
     {
         Epreuve epreuve;
 
+        epreuve.
 
         public bool estVrai (Reponse reponse)
         {

@@ -9,6 +9,7 @@ namespace ConsoleApp__Epreuve
     public class Question
     {
         string ennonce;
+
         int noteQuestion;
 
         public void setEnonce()
