@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp__Epreuve
+namespace EpreuveCs
 {
     public class Program
     {

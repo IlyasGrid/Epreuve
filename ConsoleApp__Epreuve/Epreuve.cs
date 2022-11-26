@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 
-namespace ConsoleApp__Epreuve
+namespace EpreuveCs
 {
     public class Epreuve
     {
@@ -19,7 +19,14 @@ namespace ConsoleApp__Epreuve
         DateTime dateEpreuve = new();
         public List<Question> questions = new List<Question>();
 
+        public Epreuve(string matiere, string duree, int noteTotal, DateTime dateEpreuve)
+        {
+            this.noteTotal = noteTotal;
+            this.dateEpreuve = dateEpreuve;
+            this.duree = duree;
+            this.matiere = matiere;
 
+        }
         public Epreuve(string matiere, string duree, int idExaminateur, int noteTotal, DateTime dateEpreuve)
         {
             this.noteTotal = noteTotal;
